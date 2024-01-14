@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Generación Lucha Libre</title>
+  <!-- Agregamos los estilos de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Enlazamos la hoja de estilo personalizada -->
+  <link rel="stylesheet" href="resources/css/styles.css">
+  <link rel="icon" type="image/png" href="resources/img/icon.png">
+  <style>
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay"></div>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <a id="logo_principal" class="navbar-brand" href="#"><img src="resources/img/01 logo.png" alt="Logo" class="logo-img mr-3"></a>
+    <!-- Botón para mostrar el menú en modo celular -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+    </button>
+    <!-- Menú de navegación -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="close-menu" onclick="closeMenu()">&times;</div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#section1">Luchadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section2">Eventos</a>
+        </li>
+        <li class="nav-item-last mr-lg-3">
+          <a class="nav-link" href="#section3">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido de la página -->
+
+
+
+  <!-- Fin Contenido de la página -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <script>
+    var logoImg = $('#logo_principal img');
+    var altLogoImg = $('#logo_alternativo img');
+    altLogoImg.hide();
+
+    function closeMenu() {
+      $('#overlay').fadeOut();
+      $('.navbar-collapse').removeClass('show');
+      // Desactiva la interacción con el overlay
+      $('#overlay').css('pointer-events', 'none');
+      // Restaura la interacción con el botón del menú
+      $('.navbar-toggler').css('pointer-events', 'auto');
+    }
+
+    function toggleMenu() {
+      $('#overlay').fadeToggle();
+      // Alterna entre activar y desactivar la interacción con el overlay
+      $('#overlay').css('pointer-events', function (_, value) {
+        return value === 'none' ? 'auto' : 'none';
+      });
+
+      // Desactiva o activa la interacción con el botón del menú
+      $('.navbar-toggler').css('pointer-events', function (_, value) {
+        return value === 'none' ? 'auto' : 'none';
+      });
+    }
+
+    function handleResizeAndHideMenu() {
+      var windowWidth = $(window).width();
+
+      if (windowWidth >= 992) {
+        closeMenu();
+      }
+    }
+
+    // Asociar la función al evento de clic en el botón de menú
+    $('.navbar-toggler').on('click', function () {
+      toggleMenu();
+    });
+
+    $(window).resize(function () {
+      handleResizeAndHideMenu();
+    });
+
+    $(document).ready(function(){
+    $('#imageCarousel').carousel({
+      interval: 3000, // Cambia el valor según la velocidad de cambio deseada (en milisegundos)
+      pause: 'hover' // Pausa la reproducción al pasar el ratón sobre el carrusel
+    });
+  });
+  </script>
+</body>
+</html>

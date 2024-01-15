@@ -7,19 +7,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="resources/css/styles.css">
   <link rel="icon" type="image/png" href="resources/img/icon.png">
-  <style>
-    #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(151, 151, 151, 0.5);
-    display: none;
-    pointer-events: none;
-    z-index: 998; /* Ajusta el z-index según sea necesario para asegurarte de que esté encima de otros elementos */
-  }
-  </style>
 </head>
 <body>
   <div id="overlay"></div>
@@ -35,21 +22,24 @@
     </div>
   </div>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-    <a id="logo_principal" class="navbar-brand" href="#"><img src="resources/img/01 logo.png" alt="Logo" class="logo-img mr-3"></a>
+    <a id="logo_principal" class="navbar-brand logo-link" href="#">
+      <img src="resources/img/01 logo.png" alt="Logo" class="logo-img mr-3">
+    </a>
+    
     <button onclick="this.blur();" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
+      MENU
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="close-menu" onclick="closeMenu()">&times;</div>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#section1">Luchadores</a>
+          <a class="a_animado nav-link" href="#section1">Luchadores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section2">Eventos</a>
+          <a class="a_animado nav-link" href="#section2">Eventos</a>
         </li>
         <li class="nav-item-last mr-lg-3">
-          <a class="nav-link" href="#section3">Contacto</a>
+          <a class="a_animado nav-link" href="#section3">Contacto</a>
         </li>
       </ul>
     </div>
@@ -148,6 +138,22 @@
       pause: 'hover'
     });
   });
+
+  $(document).ready(function () {
+  var logoImg = $('#logo_principal img');
+
+  logoImg.on('click', function () {
+    $(this).toggleClass('clicked');
+
+    // Puedes agregar más lógica si es necesario
+
+    // Restablece la clase después de un tiempo (por ejemplo, 0.3 segundos)
+    setTimeout(function () {
+      logoImg.removeClass('clicked');
+    }, 300);
+  });
+});
+
   </script>
 </body>
 </html>

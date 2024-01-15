@@ -162,7 +162,7 @@ body {
     height: 100%;
     z-index: 1000;
     overflow-x: hidden;
-    transition: transform 0.3s ease; 
+    transition: transform 0.2s ease; 
     padding-top: 60px;
   }
   
@@ -246,4 +246,36 @@ body {
 a:active {
   transform: translateY(2px);
   transition: transform 0.1s ease-in-out;
+}
+
+
+@keyframes infiniteScroll {
+  0% {
+      transform: translate(0)
+  }
+
+  to {
+      transform: translate(-50%)
+  }
+}
+
+.horizontal-scrolling {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  animation-name: infiniteScroll;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear
+}
+
+.horizontal-scrolling-items{
+  white-space: nowrap;
+  color: #00CC3A;
+  font-weight: 600;
+  line-height:24px;
+  text-size-adjust:100%;
+  white-space-collapse: collapse;
+  font-feature-settings:normal;
 }

@@ -28,8 +28,27 @@ body {
 }
 
 .navbar-toggler {
-  margin-right: 10px;
+  position: absolute;
+  margin-top: 5px;
+  right: 10px;
+  outline: none;
+  font-size: 15px !important;
+  height: 50px;
+  width: 75px;
+  background-color: #00CC3A;
+  border: 2px solid transparent; /* Agrega un borde transparente inicialmente */
+  color: #000 !important; /* Cambia el color del texto a negro */
+  font-weight: bold;
+  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Agrega una transición suave */
 }
+
+.navbar-toggler:hover {
+  background-color: #009933; /* Un color más oscuro en el hover */
+  border: 1px solid #E1224E; /* Agrega un borde rojo en el hover */
+}
+
+
+
 
 .nav-link{
   color:#00CC3A !important;
@@ -46,7 +65,7 @@ body {
     display: none;
   }
 
-  a {
+  .a_animado {
     background-image: linear-gradient(
       to right,
       #E1224E,
@@ -63,7 +82,7 @@ body {
     transition: all 0.3s ease-in-out;
   }
   
-  a:before{
+  .a_animado:before{
     content: '';
     background: #E1224E;
     display: block;
@@ -75,18 +94,18 @@ body {
     transition: all 0.3s ease-in-out;
   }
   
-  a:hover {
+  .a_animado:hover {
    background-position: 0;
   }
   
-  a:hover::before{
+  .a_animado:hover::before{
     width: 100%;
   }
 }
 
 @media (max-width: 991px) {
   
-  a {
+  .a_animado {
     background-image: linear-gradient(
       to right,
       #000456,
@@ -103,7 +122,7 @@ body {
     transition: all 0.3s ease-in-out;
   }
   
-  a:before{
+  .a_animado:before{
     content: '';
     background: #000456;
     display: block;
@@ -115,11 +134,11 @@ body {
     transition: all 0.3s ease-in-out;
   }
   
-  a:hover {
+  .a_animado:hover {
    background-position: 0;
   }
   
-  a:hover::before{
+  .a_animado:hover::before{
     width: 100%;
   }
   
@@ -129,12 +148,19 @@ body {
   }
   .close-menu {
     position: absolute;
-    top: -30px;
+    top: -20px;
     right: 20px;
     font-size: 60px;
     color: #E1224E;
     cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Agrega una transición suave */
   }
+  
+  .close-menu:hover {
+    color: #E1224E !important; /* Cambia el color a blanco al hacer hover */
+    transform: rotate(180deg); /* Agrega una rotación de 180 grados al hacer hover */
+  }
+  
 
   .navbar-nav {
     flex-direction: column;
@@ -245,7 +271,7 @@ body {
   width: 100%;
 }
 
-a:active {
+.a_animado:active {
   transform: translateY(2px);
   transition: transform 0.1s ease-in-out;
 }
@@ -269,7 +295,10 @@ a:active {
   animation-name: infiniteScroll;
   animation-duration: 80s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear
+  animation-timing-function: linear;
+  z-index: 997;
+  top: 85px;
+  position: fixed;
 }
 
 .horizontal-scrolling-items{
@@ -282,9 +311,7 @@ a:active {
   font-feature-settings:normal;
 }
 
-.overlay-active .custom-navbar {
-  background-color: rgba(151, 151, 151, 0.5);
-}
+
 
 .overlay-active .navbar-nav .nav-link {
   color: #000 !important; /* Cambia el color del texto del menú */
@@ -296,4 +323,57 @@ a:active {
 
 .overlay-active .navbar-toggler-icon {
   background-color: #000; /* Cambia el color del ícono del botón de menú */
+}
+
+.overlay-active .custom-navbar {
+  background-color: rgba(4, 37, 11, 0.719);
+}
+
+.overlay-active .navbar-toggler{
+  background-color: rgba(28, 102, 44, 0.719);
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 37, 11, 0.719);
+  display: none;
+  pointer-events: none;
+  z-index: 998; /* Ajusta el z-index según sea necesario para asegurarte de que esté encima de otros elementos */
+}
+.espacio{
+  height: 20px;
+}
+
+#logo_principal img {
+  transition: transform 0.3s ease; /* Agrega una transición de transformación */
+}
+
+#logo_principal img.clicked {
+  transform: translateY(5px); /* Cambia la propiedad de transformación al hacer clic */
+}
+
+#logo_principal img:hover {
+  animation: shake 0.5s ease; /* Agrega una animación de sacudida al pasar el mouse */
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

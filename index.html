@@ -6,6 +6,7 @@
   <title>Generación Lucha Libre</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="resources/css/styles.css">
+  <link rel="stylesheet" href="resources/css/styles-cards.css">
   <link rel="icon" type="image/png" href="resources/img/icon.png">
 </head>
 <body>
@@ -82,25 +83,36 @@
     </div>
   </div>
   
-
-  <main class="container px-4 mt-10 mx-auto">
-    <h1 class="text-3xl sub-title text-white sm:text-4xl">Próximos eventos</h1> 
-    <div class="mt-8 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <a href="/eventos/torneo-deathmatch-2024">
-        <div class="relative overflow-hidden w-full group border-gray-600 border hover:border-primary rounded-none transition-all h-fit md:h-96">
-          <figure class="z-10">
-            <img width="600" height="600" loading="lazy" class="object-cover object-top h-72 md:h-96 w-full" src="resources/img/Eventos/1.jpg" alt="Torneo Deathmatch - Sangre en la Lona">
-          </figure> 
-          <div class="bg-zinc-900/50 h-max grow backdrop-blur-xl absolute bottom-0 z-10 w-full pb-4">
-            <p class="text-xs md:text-md uppercase tracking-wider md:tracking-widest text-white mt-4 px-4 pt-0">
-              <time datetime="2024-02-16T23:00:00.000Z">viernes, 16 de febrero de 2024</time>
-            </p> 
-            <h2 class="text-primary font-ibm italic text-2xl md:text-4xl px-4 pt-0">Torneo Deathmatch - Sangre en la Lona</h2>
+  <ul class="cards">
+    <li>
+      <a href="" class="card">
+        <img src="resources/img/Eventos/1.jpg" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">                    
+            <div class="card__header-text sign">
+              <span class="flicker"><center> Arena, Sol y Lucha Libre #2</center></span>
+            </div>
           </div>
-        </div> 
-      </a>
-    </div>
-  </main>
+          <p class="card__description">SÁBADO, 03 DE FEBRERO DE 2024. <BR>Estadio Popular de Recoleta Leonel Sánchez.</p>
+        </div>
+      </a>      
+    </li>
+    <li>
+      <a href="" class="card">
+        <img src="resources/img/Eventos/2.jpg" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">                  
+            <div class="card__header-text">
+              <span class="flicker"><center> Arena, Sol y Lucha Libre</center></span>             
+            </div>
+          </div>
+          <p class="card__description ">SÁBADO, 06 DE ENERO DE 2024. <BR>Estadio Popular de Recoleta Leonel Sánchez.</p>
+        </div>
+      </a>      
+    </li>
+    
+  </ul>
+            
   <!-- FIN BODY -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="resources/js/script.js"></script>

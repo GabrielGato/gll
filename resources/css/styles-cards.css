@@ -1,0 +1,314 @@
+
+:root {
+    --surface-color: #000000;
+    --curve: 40;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+.cards {
+    background-color: #000000;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+    border-color: #000000;
+  }
+  
+  .card {
+    background-color: #000000;
+    position: relative;
+    display: block;
+    height: 100%;  
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+    border: none;
+    border-color: #000000;
+  }
+  
+  .card__image {  
+    background-color: #000000;    
+    width: 100%;
+    height: auto;
+  }
+  
+  .card__overlay {
+    background-color: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    border-radius: calc(var(--curve) * 1px);    
+    background-color: var(--surface-color);      
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card:hover .card__overlay {
+    transform: translateY(0);
+  }
+  
+  .card__header {
+    background-color: #000000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;    
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card__arc {
+    background-color: #000000;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;      
+    z-index: 1;
+  }
+  
+  .card__arc path {
+    background-color: #000000;
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+  }       
+  
+  .card:hover .card__header {
+    background-color: #000000;
+    transform: translateY(0);
+  }
+  
+  .card__thumb {
+    background-color: #000000;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;      
+    border-radius: 50%;      
+  }
+  
+  .card__title {
+    background-color: #000000;
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: #00CC3A;
+    text-align: center !important;
+  }
+  
+  .card__tagline {
+    background-color: #000000;
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";  
+    font-size: .8em; 
+    color: blue;  
+  }
+  
+  .card__status {
+    background-color: #000000;
+    font-size: .8em;
+    color: #000000;
+  }
+  
+  .card__description {
+    background-color: #000000;
+    font-size: 20px;
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #ffffff;  
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-transform: uppercase;
+  }    
+
+  .card__header-text {
+    width: -webkit-fill-available;
+    background-image: radial-gradient(
+        ellipse 50% 35% at 50% 50%,
+        #01250b,
+        transparent
+      );
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #80f09f;
+    text-shadow: 0 0 0.6rem #80f09f, 0 0 1.5rem #80f09f,
+      -0.2rem 0.1rem 1rem #00CC3A, 0.2rem 0.1rem 1rem #00CC3A,
+      0 -0.5rem 2rem #006b1e, 0 0.5rem 3rem #006b1e;
+  }
+  28%,
+  33% {
+    color: #00CC3A;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #006b1e;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+    text-align: center;
+    font-size: 35px;
+    animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+    text-align: center;
+    font-size: 35px;
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #006b1e;
+    text-shadow: none;
+  }
+  100% {
+    color: #80f09f;
+    text-shadow: 0 0 0.6rem #80f09f, 0 0 1.5rem #00CC3A,
+      -0.2rem 0.1rem 1rem #00CC3A, 0.2rem 0.1rem 1rem #00CC3A,
+      0 -0.5rem 2rem #006b1e, 0 0.5rem 3rem #006b1e;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

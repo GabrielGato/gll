@@ -4,8 +4,9 @@ body {
   font-family: sans-serif;
 }
 
-.custom-navbar {
-  transition: background-color 0.4s ease;
+.custom-navbar {  
+  backdrop-filter: blur(15px);
+  /*transition: background-color 0.4s ease;*/
   background-color: rgba(0, 0, 0, 0.85);
   height: 85px;
   display: flex;
@@ -187,7 +188,7 @@ body {
     left: -250px;
     width: 250px; 
     height: 100%;
-    z-index: 1000;
+    z-index: 1;
     overflow-x: hidden;
     transition: transform 0.2s ease; 
     padding-top: 60px;
@@ -326,7 +327,8 @@ body {
 }
 
 .overlay-active .custom-navbar {
-  background-color: rgba(4, 37, 11, 0.719);
+  background-color: rgb(0, 0, 0);
+  backdrop-filter: none;
 }
 
 .overlay-active .navbar-toggler{
@@ -349,7 +351,7 @@ body {
 }
 
 #logo_principal img {
-  transition: transform 0.3s ease; /* Agrega una transición de transformación */
+  transition: transform 0.2s ease; /* Agrega una transición de transformación */
 }
 
 #logo_principal img.clicked {
@@ -364,14 +366,11 @@ body {
   0% {
     transform: translateX(0);
   }
-  25% {
+  45% {
     transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(5px);
   }
   75% {
-    transform: translateX(-5px);
+    transform: translateX(5px);
   }
   100% {
     transform: translateX(0);
@@ -423,4 +422,13 @@ body {
   border: none; /* Para quitar el borde predeterminado del iframe */
   z-index: 2;
 }
+
+
+
+.img-eventos{
+  height: 600px;
+  width: 700px;
+}
+
+
 

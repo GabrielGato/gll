@@ -7,22 +7,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="resources/css/styles.css">
   <link rel="icon" type="image/png" href="resources/img/icon.png">
-  <style>
-    #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(151, 151, 151, 0.5);
-    display: none;
-    pointer-events: none;
-    z-index: 998; /* Ajusta el z-index según sea necesario para asegurarte de que esté encima de otros elementos */
-  }
-  </style>
 </head>
 <body>
-  <div id="overlay"></div>
+  
 
   <div class="bg-black/50 text-primary py-2 w-full overflow-hidden absolute top-20 z-20 backdrop-blur-sm" style="margin-top: 75px;">
     <div class="horizontal-scrolling">
@@ -35,119 +22,89 @@
     </div>
   </div>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-    <a id="logo_principal" class="navbar-brand" href="#"><img src="resources/img/01 logo.png" alt="Logo" class="logo-img mr-3"></a>
+    <a id="logo_principal" class="navbar-brand logo-link" href="#">
+      <img src="resources/img/01 logo.png" alt="Logo" class="logo-img mr-3">
+    </a>
+    
     <button onclick="this.blur();" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
+      MENU
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="close-menu" onclick="closeMenu()">&times;</div>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#section1">Luchadores</a>
+          <a class="a_animado nav-link" href="#section1">Luchadores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section2">Eventos</a>
+          <a class="a_animado nav-link" href="#section2">Eventos</a>
         </li>
         <li class="nav-item-last mr-lg-3">
-          <a class="nav-link" href="#section3">Contacto</a>
+          <a class="a_animado nav-link" href="#section3">Contacto</a>
         </li>
       </ul>
     </div>
   </nav>
-
+  <div id="overlay"></div>
   <div class="espacio"></div>
+
+ <!-- AQUI VA EL BODY -->
   <div class="container-carrusel">
   <div id="imageCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="resources/img/Carrusel/1.jpg" class="d-block carousel-img" alt="Imagen 1">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
       </div>
       <div class="carousel-item">
         <img src="resources/img/Carrusel/3.jpg" class="d-block carousel-img" alt="Imagen 2">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
       </div>
       <div class="carousel-item">
         <img src="resources/img/Carrusel/4.jpg" class="d-block carousel-img" alt="Imagen 3">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
       </div>
       <div class="carousel-item">
         <img src="resources/img/Carrusel/5.jpg" class="d-block carousel-img" alt="Imagen 4">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
       </div>
       <div class="carousel-item">
         <img src="resources/img/Carrusel/6.jpg" class="d-block carousel-img" alt="Imagen 5">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
       </div>
       <div class="carousel-item">
         <img src="resources/img/Carrusel/7.jpg" class="d-block carousel-img" alt="Imagen 6">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
       </div>
       <div class="carousel-item">
         <img src="resources/img/Carrusel/8.jpg" class="d-block carousel-img" alt="Imagen 7">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
       </div>
     </div>
   </div>
-  <div class="container mt-5">
-    <div id="section1" class="mb-5">
-      <h2>Sección 1</h2>
-      <p>Contenido de la sección 1.</p>
-    </div>
-    <div id="section2" class="mb-5">
-      <h2>Sección 2</h2>
-      <p>Contenido de la sección 2.</p>
-    </div>
-    <div id="section3">
-      <h2>Sección 3</h2>
-      <p>Contenido de la sección 3.</p>
-    </div>
-  </div>
+  
 
+  <main class="container px-4 mt-10 mx-auto">
+    <h1 class="text-3xl sub-title text-white sm:text-4xl">Próximos eventos</h1> 
+    <div class="mt-8 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <a href="/eventos/torneo-deathmatch-2024">
+        <div class="relative overflow-hidden w-full group border-gray-600 border hover:border-primary rounded-none transition-all h-fit md:h-96">
+          <figure class="z-10">
+            <img width="600" height="600" loading="lazy" class="object-cover object-top h-72 md:h-96 w-full" src="resources/img/Eventos/1.jpg" alt="Torneo Deathmatch - Sangre en la Lona">
+          </figure> 
+          <div class="bg-zinc-900/50 h-max grow backdrop-blur-xl absolute bottom-0 z-10 w-full pb-4">
+            <p class="text-xs md:text-md uppercase tracking-wider md:tracking-widest text-white mt-4 px-4 pt-0">
+              <time datetime="2024-02-16T23:00:00.000Z">viernes, 16 de febrero de 2024</time>
+            </p> 
+            <h2 class="text-primary font-ibm italic text-2xl md:text-4xl px-4 pt-0">Torneo Deathmatch - Sangre en la Lona</h2>
+          </div>
+        </div> 
+      </a>
+    </div>
+  </main>
+  <!-- FIN BODY -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="resources/js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
-  <script>
-    var logoImg = $('#logo_principal img');
-    var altLogoImg = $('#logo_alternativo img');
-    altLogoImg.hide();
-
-    function closeMenu() {
-      $('body').removeClass('overlay-active');
-      $('#overlay').fadeOut();
-      $('.navbar-collapse').removeClass('show');
-      $('#overlay').css('pointer-events', 'none');
-      $('.navbar-toggler').css('pointer-events', 'auto');
-    }
-
-    function toggleMenu() {
-      $('body').toggleClass('overlay-active');
-      $('#overlay').fadeToggle();
-      $('#overlay').css('pointer-events', function (_, value) {
-        return value === 'none' ? 'auto' : 'none';
-      });
-
-      $('.navbar-toggler').css('pointer-events', function (_, value) {
-        return value === 'none' ? 'auto' : 'none';
-      });
-    }
-
-    function handleResizeAndHideMenu() {
-      var windowWidth = $(window).width();
-
-      if (windowWidth >= 992) {
-        closeMenu();
-      }
-    }
-
-    $('.navbar-toggler').on('click', function () {
-      toggleMenu();
-    });
-
-    $(window).resize(function () {
-      handleResizeAndHideMenu();
-    });
-
-    $(document).ready(function(){
-    $('#imageCarousel').carousel({
-      interval: 3000,
-      pause: 'hover'
-    });
-  });
-  </script>
 </body>
 </html>

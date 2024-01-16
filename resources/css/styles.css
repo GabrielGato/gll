@@ -414,16 +414,13 @@ body {
 
 
 .overlay-frame {
-  margin-bottom: 200px;
+  margin-bottom: -200px;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 600px !important;
   border: none; /* Para quitar el borde predeterminado del iframe */
+  z-index: 2;
 }
 
-.overlay-div img {
-  width: 100%; /* Ajusta el ancho según sea necesario */
-  height: auto; /* Permite que la altura se ajuste automáticamente */
-}

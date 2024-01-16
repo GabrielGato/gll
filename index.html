@@ -55,6 +55,30 @@
         <img src="resources/img/Carrusel/1.jpg" class="d-block carousel-img" alt="Imagen 1">
         <iframe src="overlay.html" class="overlay-frame"></iframe>
       </div>
+      <div class="carousel-item">
+        <img src="resources/img/Carrusel/3.jpg" class="d-block carousel-img" alt="Imagen 2">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
+      </div>
+      <div class="carousel-item">
+        <img src="resources/img/Carrusel/4.jpg" class="d-block carousel-img" alt="Imagen 3">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
+      </div>
+      <div class="carousel-item">
+        <img src="resources/img/Carrusel/5.jpg" class="d-block carousel-img" alt="Imagen 4">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
+      </div>
+      <div class="carousel-item">
+        <img src="resources/img/Carrusel/6.jpg" class="d-block carousel-img" alt="Imagen 5">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
+      </div>
+      <div class="carousel-item">
+        <img src="resources/img/Carrusel/7.jpg" class="d-block carousel-img" alt="Imagen 6">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
+      </div>
+      <div class="carousel-item">
+        <img src="resources/img/Carrusel/8.jpg" class="d-block carousel-img" alt="Imagen 7">
+        <iframe src="overlay.html" class="overlay-frame"></iframe>
+      </div>
     </div>
   </div>
   
@@ -82,5 +106,73 @@
   <script src="resources/js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
+=======
+  
+  <script>
+    var logoImg = $('#logo_principal img');
+    var altLogoImg = $('#logo_alternativo img');
+    altLogoImg.hide();
+
+    function closeMenu() {
+      $('body').removeClass('overlay-active');
+      $('#overlay').fadeOut();
+      $('.navbar-collapse').removeClass('show');
+      $('#overlay').css('pointer-events', 'none');
+      $('.navbar-toggler').css('pointer-events', 'auto');
+    }
+
+    function toggleMenu() {
+      $('body').toggleClass('overlay-active');
+      $('#overlay').fadeToggle();
+      $('#overlay').css('pointer-events', function (_, value) {
+        return value === 'none' ? 'auto' : 'none';
+      });
+
+      $('.navbar-toggler').css('pointer-events', function (_, value) {
+        return value === 'none' ? 'auto' : 'none';
+      });
+    }
+
+    function handleResizeAndHideMenu() {
+      var windowWidth = $(window).width();
+
+      if (windowWidth >= 992) {
+        closeMenu();
+      }
+    }
+
+    $('.navbar-toggler').on('click', function () {
+      toggleMenu();
+    });
+
+    $(window).resize(function () {
+      handleResizeAndHideMenu();
+    });
+
+    $(document).ready(function(){
+    $('#imageCarousel').carousel({
+      interval: 3000,
+      pause: 'hover'
+    });
+  });
+
+  $(document).ready(function () {
+  var logoImg = $('#logo_principal img');
+
+  logoImg.on('click', function () {
+    $(this).toggleClass('clicked');
+
+    // Puedes agregar más lógica si es necesario
+
+    // Restablece la clase después de un tiempo (por ejemplo, 0.3 segundos)
+    setTimeout(function () {
+      logoImg.removeClass('clicked');
+    }, 300);
+  });
+});
+
+  </script>
+>>>>>>> 92f239a1128308acda24825fa1d2e66380c99498
 </body>
 </html>

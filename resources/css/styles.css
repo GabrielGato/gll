@@ -432,3 +432,38 @@ body {
 
 
 
+.eventos{
+  margin-top: 30px;
+}
+
+.texto_eventos{
+  color: #00CC3A;
+  text-transform: uppercase;
+}
+
+.texto_copy{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.espacio2{
+  height: 10px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-image-social-media {
+  margin: 0 10px; /* Ajusta el margen entre las imágenes según sea necesario */
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+.icon-image-social-media:hover {
+  background-color: #ffffff;
+  border-radius: 50%;
+}

@@ -40,7 +40,7 @@ $(window).resize(function () {
 
 $(document).ready(function () {
   $('#imageCarousel').carousel({
-    interval: 3000,
+    interval: 15000,
     pause: 'hover'
   });
 });

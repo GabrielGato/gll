@@ -1,0 +1,17 @@
+@media only screen and (max-width: 600px) {
+  .ocultar-en-movil {
+    display: none;
+  }
+  html, body {margin: 0; height: 100%; overflow: hidden}
+}
+
+/* Estilo para ocultar el h1 en pantallas más grandes */
+@media only screen and (min-width: 601px) {
+  .ocultar-en-grande {
+    display: none;
+  }
+}
+
+.texto_overlay {
+  line-height: 1.2; /* Ajusta este valor según tus necesidades */
+}

@@ -499,8 +499,8 @@ body {
     .overlay-div-ocultar {
       margin: 0 auto;
       text-align: center;
-    }
-    
+      line-height: 0.8;
+    }    
   }
   
   /* Estilo para ocultar el h1 en pantallas más grandes */
@@ -511,6 +511,7 @@ body {
 
     .overlay-div-ocultar {
       display: none;
+      
     }
 
     

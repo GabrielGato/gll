@@ -474,6 +474,33 @@ body {
     .ocultar-en-movil {
       display: none;
     }
+
+
+    .carousel-img{
+      margin-top: 220px;
+      object-fit: contain;
+
+      max-width: 100%;
+      height: auto !important;
+      width: 100%;
+    }
+    .carousel{
+      margin-top: -225px;
+      margin-bottom: -35px;
+    }
+
+    .carousel-inner{
+      height: 500px;
+    }
+
+    .overlay-frame{
+      display: none;
+    }
+    .overlay-div-ocultar {
+      margin: 0 auto;
+      text-align: center;
+    }
+    
   }
   
   /* Estilo para ocultar el h1 en pantallas más grandes */
@@ -481,6 +508,13 @@ body {
     .ocultar-en-grande {
       display: none;
     }
+
+    .overlay-div-ocultar {
+      display: none;
+    }
+
+    
+
   }
   
   .texto_eventos {

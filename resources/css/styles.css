@@ -1,13 +1,54 @@
+
+:root {
+  /*OPCIONES GENERALES*/
+  --color-fondo-pagina: #000000; /*COLOR DE FONDO COMPLETO DE LA PAGINA*/
+  --fuente: sans-serif; /*FUENTE DE TODA LA PAGINA*/
+  --color-fondo-barra-menu:rgba(0, 0, 0, 0.85); /*COLOR DE LA BARRA DE MENU*/
+  --color-letras-anuncios: #00CC3A; /*COLOR DE LAS LETRAS DEL ANUNCIO QUE VA PASANDO*/
+  --color-fondo-anuncios:rgba(0, 0, 0, 0.85); /*COLOR DE FONDO DEL ANUNCIO QUE VA PASANDO*/
+  --color-texto-derechos-reservados: #ffffff; /*COLOR DE TEXTO DE DERECHOS RESERVADOS*/
+  --color-texto-titulo-eventos: #00CC3A; /*COLOR DEL TEXTO DE PROXIMOS EVENTOS*/
+  --color-icono-redes-sociales-encima: #ffffff; /*COLOR DE FONDO DE LOS ICONOS CUANDO PONES EL MOUSE ENCIMA*/
+
+
+
+   /*OPCIONES MENU PANTALLAS GRANDES*/
+  --color-opcion-menu-ventana : #cc0044; /*COLOR DE LAS OPCIONES DEL MENU, EN PANTALLA GRANDE*/
+  /* LAS OPCIONES DEL MENU TIENEN LA OPCION DE GRADIANTE, PUEDES PONER 2 COLORES, EL INICIAL Y EL FINAL*/
+  --color-opcion-menu-ventana-encima-inicio: #E1224E; /*COLOR INICIAL DE LAS OPCIONES DEL MENU CUANDO PONES EL MOUSE ENCIMA, SOLO EN PANTALLA GRANDE*/
+  --color-opcion-menu-ventana-encima-final: #E1224E; /*COLOR FINAL DE LAS OPCIONES DEL MENU CUANDO PONES EL MOUSE ENCIMA, SOLO EN PANTALLA GRANDE*/
+  --color-opcion-menu-ventana-encima-raya-inferior: #E1224E; /*COLOR DE LA RAYA INFERIOR DE LAS OPCIONES DEL MENU CUANDO PONES EL MOUSE ENCIMA, SOLO EN PANTALLA GRANDE*/
+
+
+  /*OPCIONES MENU PANTALLAS PEQUEÑAS*/
+  --color-fondo-menu-expandido: #00CC3A; /*COLOR DE FONDO DEL MENU, CUANDO LO ABRES, SOLO EN PANTALLA PEQUEÑA*/
+  --color-boton-menu: #00CC3A; /*COLOR DEL BOTON DEL MENU, SOLO SE VE EN PANTALLAS PEQUEÑAS*/
+  --color-texto-boton-menu: #000000; /*COLOR DEL TEXTO DEL BOTON DEL MENU, SOLO SE VE EN PANTALLAS PEQUEÑAS*/
+  --color-borde-boton-menu--encima: #E1224E; /*COLOR DEL BORDE DEL BOTON DEL MENU CUANDO PONES EL MOUSE ENCIMA, SOLO EN PANTALLAS PEQUEÑAS*/
+  --color-boton-menu--encima: #009933; /*COLOR DEL BOTON CUANDO PONES EL MOUSE ENCIMA, SOLO SE VE EN PANTALLAS PEQUEÑAS*/
+  --color-opcion-menu-chico: #E1224E; /*COLOR DE LAS OPCIONES DEL MENU, EN PANTALLA PEQUEÑA*/
+  /* LAS OPCIONES DEL MENU TIENEN LA OPCION DE GRADIANTE, PUEDES PONER 2 COLORES, EL INICIAL Y EL FINAL*/
+  --color-opcion-menu-chico-encima-inicio: #000456; /*COLOR INICIAL DE LAS OPCIONES DEL MENU CUANDO PONES EL MOUSE ENCIMA, SOLO EN PANTALLA PEQUEÑA*/
+  --color-opcion-menu-chico-encima-final: #000456; /*COLOR FINAL DE LAS OPCIONES DEL MENU CUANDO PONES EL MOUSE ENCIMA, SOLO EN PANTALLA PEQUEÑA*/
+  --color-opcion-menu-chico-encima-raya-inferior: #000456; /*COLOR DE LA RAYA INFERIOR DE LAS OPCIONES DEL MENU CUANDO PONES EL MOUSE ENCIMA, SOLO EN PANTALLA PEQUEÑA*/
+  --color-boton-cerrar-menu-encima: #E1224E; /*COLOR DE LA X PARA CERRAR EL MENU CUANDO PONES EL MOUSE ENCIMA, SOLO PANTALLA PEQUEÑA*/
+  --color-boton-cerrar-menu: #000000; /*COLOR DE LA X PARA CERRAR EL MENU, SOLO PANTALLA PEQUEÑA*/
+  --color-barra-menu-abierto: rgb(0, 0, 0); /*COLOR DE LA BARRA DEL MENU (LA DE ARRIBA), CUANDO ABRES EL MENU DESDE EL BOTON, SOLO PANTALLA PEQUEÑA*/
+  --color-boton-menu-abierto: rgba(28, 102, 44, 0.719); /*COLOR DEL BOTON DE MENU CUANDO ABRES EL MENU DESDE ESTE MISMO BOTON, SOLO PANTALLA PEQUEÑA*/
+  --color-menu-abierto: rgba(4, 37, 11, 0.719); /*COLOR DE LA PANTALLA (FONDO) CUANDO ABRES EL MENU DESDE EL BOTON, SOLO PANTALLA PEQUEÑA*/
+
+}
+
 body {
-    background-color: #000000;
+    background-color: var(--color-fondo-pagina);
     margin-top: 0px;
-    font-family: sans-serif;
+    font-family: var(--fuente);
   }
   
   .custom-navbar {  
     backdrop-filter: blur(15px);
     /*transition: background-color 0.4s ease;*/
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: var(--color-fondo-barra-menu);
     height: 85px;
     display: flex;
     justify-content: space-between;
@@ -36,30 +77,26 @@ body {
     font-size: 15px !important;
     height: 50px;
     width: 75px;
-    background-color: #00CC3A;
-    border: 2px solid transparent; /* Agrega un borde transparente inicialmente */
-    color: #000 !important; /* Cambia el color del texto a negro */
+    background-color: var(--color-boton-menu);
+    border: 2px solid transparent;
+    color: var(--color-texto-boton-menu) !important; 
     font-weight: bold;
-    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Agrega una transición suave */
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
   }
   
   .navbar-toggler:hover {
-    background-color: #009933; /* Un color más oscuro en el hover */
-    border: 1px solid #E1224E; /* Agrega un borde rojo en el hover */
+    background-color: var(--color-boton-menu--encima); /* Un color más oscuro en el hover */
+    border: 1px solid var(--color-borde-boton-menu--encima); /* Agrega un borde rojo en el hover */
   }
   
   
   
   
   .nav-link{
-    color:#00CC3A !important;
     font-size: 20px;
     font-weight: bold;
   }
   
-  .nav-link:hover {
-    color: #296112 !important; 
-  }
   
   @media (min-width: 992px) {
     .close-menu {
@@ -69,9 +106,9 @@ body {
     .a_animado {
       background-image: linear-gradient(
         to right,
-        #E1224E,
-        #E1224E 50%,
-        #00CC3A 50%
+        var(--color-opcion-menu-ventana-encima-inicio),
+        var(--color-opcion-menu-ventana-encima-final), 50%,
+        var(--color-opcion-menu-ventana) 50%
       );
       background-size: 200% 100%;
       background-position: -100%;
@@ -85,7 +122,7 @@ body {
     
     .a_animado:before{
       content: '';
-      background: #E1224E;
+      background: var(--color-opcion-menu-ventana-encima-raya-inferior);
       display: block;
       position: absolute;
       bottom: -3px;
@@ -109,9 +146,9 @@ body {
     .a_animado {
       background-image: linear-gradient(
         to right,
-        #000456,
-        #000456 50%,
-        #E1224E 50%
+        var(--color-opcion-menu-chico-encima-inicio),
+        var(--color-opcion-menu-chico-encima-final), 50%,
+        var(--color-opcion-menu-chico) 50%
       );
       background-size: 200% 100%;
       background-position: -100%;
@@ -125,7 +162,7 @@ body {
     
     .a_animado:before{
       content: '';
-      background: #000456;
+      background: var(--color-opcion-menu-chico-encima-raya-inferior);
       display: block;
       position: absolute;
       bottom: -3px;
@@ -144,7 +181,6 @@ body {
     }
     
     .nav-link{
-      color:#E1224E !important;
       font-size: 25px;
     }
     .close-menu {
@@ -152,14 +188,13 @@ body {
       top: -20px;
       right: 20px;
       font-size: 60px;
-      color: #E1224E;
       cursor: pointer;
-      transition: color 0.3s ease, transform 0.3s ease; /* Agrega una transición suave */
+      transition: color 0.3s ease, transform 0.3s ease;
     }
     
     .close-menu:hover {
-      color: #E1224E !important; /* Cambia el color a blanco al hacer hover */
-      transform: rotate(180deg); /* Agrega una rotación de 180 grados al hacer hover */
+      color: var(--color-boton-cerrar-menu-encima) !important;
+      transform: rotate(180deg);
     }
     
   
@@ -182,7 +217,7 @@ body {
     }
   
     .navbar-collapse {
-      background-color: #00CC3A;
+      background-color: var(--color-fondo-menu-expandido);
       position: fixed;
       top: 0;
       left: -250px;
@@ -217,9 +252,6 @@ body {
       margin-bottom: 10px;
       margin-right: 0px !important;
     }
-    .color-changed{
-      background-color:grey!important;
-      }
   }
   
   
@@ -290,7 +322,7 @@ body {
   }
   
   .horizontal-scrolling {
-    background-color: rgba(0, 0, 0, 0.85) !important;
+    background-color: var(--color-fondo-anuncios) !important;
     display: flex;
     width: -moz-fit-content;
     width: fit-content;
@@ -305,7 +337,7 @@ body {
   
   .horizontal-scrolling-items{
     white-space: nowrap;
-    color: #00CC3A;
+    color: var(--color-letras-anuncios);
     font-weight: 600;
     line-height:24px;
     text-size-adjust:100%;
@@ -313,27 +345,17 @@ body {
     font-feature-settings:normal;
   }
   
-  
-  
-  .overlay-active .navbar-nav .nav-link {
-    color: #000 !important; /* Cambia el color del texto del menú */
-  }
-  
   .overlay-active .close-menu {
-    color: #000; /* Cambia el color de la 'x' para cerrar el menú */
-  }
-  
-  .overlay-active .navbar-toggler-icon {
-    background-color: #000; /* Cambia el color del ícono del botón de menú */
+    color: var(--color-boton-cerrar-menu);
   }
   
   .overlay-active .custom-navbar {
-    background-color: rgb(0, 0, 0);
+    background-color: var(--color-barra-menu-abierto);
     backdrop-filter: none;
   }
   
   .overlay-active .navbar-toggler{
-    background-color: rgba(28, 102, 44, 0.719);
+    background-color: var(--color-boton-menu-abierto);
   }
   
   #overlay {
@@ -342,7 +364,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(4, 37, 11, 0.719);
+    background: var(--color-menu-abierto);
     display: none;
     pointer-events: none;
     z-index: 998; /* Ajusta el z-index según sea necesario para asegurarte de que esté encima de otros elementos */
@@ -438,12 +460,12 @@ body {
   }
   
   .texto_eventos{
-    color: #00CC3A;
+    color: var(--color-texto-titulo-eventos);
     text-transform: uppercase;
   }
   
   .texto_copy{
-    color: #fff;
+    color: var(--color-texto-derechos-reservados);
     text-transform: uppercase;
     font-size: 13px;
   }
@@ -465,7 +487,7 @@ body {
   }
   
   .icon-image-social-media:hover {
-    background-color: #ffffff;
+    background-color: var(--color-icono-redes-sociales-encima);
     border-radius: 50%;
   }
   

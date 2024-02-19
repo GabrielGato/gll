@@ -9,7 +9,7 @@
   --color-texto-derechos-reservados: #ffffff; /*COLOR DE TEXTO DE DERECHOS RESERVADOS*/
   --color-texto-titulo-eventos: #00CC3A; /*COLOR DEL TEXTO DE PROXIMOS EVENTOS*/
   --color-icono-redes-sociales-encima: #ffffff; /*COLOR DE FONDO DE LOS ICONOS CUANDO PONES EL MOUSE ENCIMA*/
-
+  --color-scroll-pagina: #00CC3A; /*COLOR DE LA BARRA DE SCROLL*/
 
 
    /*OPCIONES MENU PANTALLAS GRANDES*/
@@ -372,6 +372,10 @@ body {
   .espacio{
     height: 20px;
   }
+
+  .espacio2{
+    height: 50px;
+  }
   
   #logo_principal img {
     transition: transform 0.2s ease; /* Agrega una transición de transformación */
@@ -469,9 +473,7 @@ body {
     text-transform: uppercase;
     font-size: 13px;
   }
-  .espacio2{
-    height: 10px;
-  }
+  
   
   .flex-center {
     display: flex;
@@ -543,3 +545,21 @@ body {
   .texto_eventos {
     line-height: 1.2; /* Ajusta este valor según tus necesidades */
   }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 20px;
+    height: 100%;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-scroll-pagina);
+    border-radius: 10px;
+  }
+  

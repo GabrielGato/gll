@@ -1,0 +1,10 @@
+# Activar la gestión de errores
+ErrorDocument 404 /index.html
+
+# Restricción de acceso a ciertos archivos
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+  Require all denied
+</FilesMatch>
+
+# Desactivar la opción de directorio
+Options -Indexes

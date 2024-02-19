@@ -35,7 +35,7 @@
     }
   </style>
 </head>
-<body>
+<body style="margin-bottom: 540px;">
   <div class="bg-black/50 text-primary py-2 w-full overflow-hidden absolute top-20 z-20 backdrop-blur-sm" style="margin-top: 75px;">
     <div class="horizontal-scrolling">
       <div class="horizontal-scrolling-items" style="text-transform: uppercase;">
@@ -47,8 +47,8 @@
     </div>
   </div>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-    <a id="logo_principal" class="navbar-brand logo-link" href="#">
-      <img src="resources/img/01 logo.png" alt="Logo" class="logo-img mr-3">
+    <a id="logo_principal" class="navbar-brand logo-link" href="">
+      <img id="link-inicio" src="resources/img/01 logo.png" alt="Logo" class="logo-img mr-3">
     </a>
     
     <button onclick="this.blur();" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,13 +58,13 @@
       <div class="close-menu" onclick="closeMenu()">&times;</div>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="a_animado nav-link" href="#section1">Luchadores</a>
+          <a id="link-luchadores" class="a_animado nav-link" href="#luchadores">Luchadores</a>
         </li>
-        <li class="nav-item">
-          <a class="a_animado nav-link" href="#section2">Eventos</a>
+        <li class="nav-eventos">
+          <a id="link-eventos" class="a_animado nav-link" href="#eventos">Eventos</a>
         </li>
         <li class="nav-item-last mr-lg-3">
-          <a class="a_animado nav-link" href="#section3">Contacto</a>
+          <a id="link-contacto" class="a_animado nav-link" href="#contacto">Contacto</a>
         </li>
       </ul>
     </div>
@@ -74,13 +74,83 @@
 
   <!-- AQUI VA EL BODY -->
   <div class="iframe-container">
-    <iframe src="pages/inicio.html" frameborder="0"></iframe>
+    <iframe src="" frameborder="0"></iframe>
   </div>
   <!-- FIN BODY -->
-  
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="resources/js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<script>
+  $(document).ready(function() {
+    var base_url =  window.location.href;
+    let lastIndex = base_url.lastIndexOf('/');
+    let newUrl = base_url.substring(0, lastIndex);
+    $("#link-inicio").click(function(e) {
+      closeMenu();
+      e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+      $("iframe").attr("src", "pages/inicio.html"); // Cambiar la página en el iframe
+      history.pushState({}, '', newUrl+"");
+    });
+    // Manejador de eventos para el enlace de Luchadores
+    $("#link-luchadores").click(function(e) {
+      closeMenu();
+      e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+      $("iframe").attr("src", "pages/luchadores.html"); // Cambiar la página en el iframe
+      url =
+      history.pushState({}, '', newUrl+"/luchadores");
+    });
+
+    // Manejador de eventos para el enlace de Eventos
+    $("#link-eventos").click(function(e) {
+      closeMenu();
+      e.preventDefault();
+      $("iframe").attr("src", "pages/eventos.html");
+      history.pushState({}, '', newUrl+"/eventos");
+    });
+
+    // Manejador de eventos para el enlace de Contacto
+    $("#link-contacto").click(function(e) {
+      closeMenu();
+      e.preventDefault();
+      $("iframe").attr("src", "pages/contacto.html");
+      history.pushState({}, '', newUrl+"/contacto");
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      // Obtener la URL actual
+      let url = window.location.href;
+      let lastIndex = url.lastIndexOf('/');
+      let newUrl = url.substring(0, lastIndex);
+      // Obtener el último término de la URL
+      let lastTerm = url.split('/').filter(term => term.trim() !== '').pop();
+      // Realizar diferentes acciones según el último término
+      switch(lastTerm) {
+          case 'luchadores':
+              // Acciones específicas para la URL que termina en "luchadores"
+              $("iframe").attr("src", "pages/luchadores.html");
+              history.pushState({}, '', newUrl+"/luchadores");
+              break;
+          case 'contacto':
+              // Acciones específicas para la URL que termina en "contacto"
+              $("iframe").attr("src", "pages/contacto.html");
+              history.pushState({}, '', newUrl+"/contacto");
+              break;
+          case 'eventos':
+              $("iframe").attr("src", "pages/eventos.html");
+              history.pushState({}, '', newUrl+"/eventos");
+              break;
+          default:
+              // Acciones por defecto para otras URLs
+              $("iframe").attr("src", "pages/inicio.html"); // Cambiar la página en el iframe
+              history.pushState({}, '', newUrl+"");
+              break;
+      }
+  });
+  </script>
